@@ -1,1153 +1,858 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Dunton — Programme & Delivery Director</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Dunton — Programme & Delivery Director</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      :root {
-        --ink: #0f1117;
-        --off-white: #f5f2ec;
-        --cream: #ede9e0;
-        --accent: #b8460e;
-        --accent-light: #e8d5cc;
-        --mid: #6b6560;
-        --rule: #d4cfc7;
-      }
+  :root {
+    --ink: #0f1117;
+    --off-white: #f5f2ec;
+    --cream: #ede9e0;
+    --accent: #b8460e;
+    --accent-light: #e8d5cc;
+    --mid: #6b6560;
+    --rule: #d4cfc7;
+  }
 
-      html {
-        scroll-behavior: smooth;
-      }
+  html { scroll-behavior: smooth; }
 
-      body {
-        background: var(--off-white);
-        color: var(--ink);
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 300;
-        line-height: 1.7;
-        overflow-x: hidden;
-      }
+  body {
+    background: var(--off-white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-      /* NAV */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.2rem 4rem;
-        background: rgba(245, 242, 236, 0.92);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--rule);
-      }
-      .nav-logo {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 1.1rem;
-        letter-spacing: 0.02em;
-        color: var(--ink);
-        text-decoration: none;
-      }
-      .nav-links {
-        display: flex;
-        gap: 2.5rem;
-        list-style: none;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--mid);
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-weight: 500;
-        transition: color 0.2s;
-      }
-      .nav-links a:hover {
-        color: var(--accent);
-      }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(245,242,236,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
 
-      /* HERO */
-      .hero {
-        min-height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding-top: 80px;
-      }
-      .hero-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 6rem 5rem 6rem 4rem;
-        position: relative;
-      }
-      .hero-left::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 10%;
-        bottom: 10%;
-        width: 1px;
-        background: var(--rule);
-      }
-      .hero-tag {
-        font-size: 0.75rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 500;
-        margin-bottom: 1.5rem;
-      }
-      .hero-name {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(3.5rem, 6vw, 5.5rem);
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: -0.02em;
-        margin-bottom: 0.3rem;
-      }
-      .hero-name span {
-        display: block;
-        color: var(--accent);
-      }
-      .hero-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1rem, 1.8vw, 1.4rem);
-        font-weight: 400;
-        color: var(--mid);
-        font-style: italic;
-        margin-bottom: 2.5rem;
-        letter-spacing: 0.01em;
-      }
-      .hero-intro {
-        font-size: 1rem;
-        color: var(--ink);
-        max-width: 480px;
-        line-height: 1.8;
-        margin-bottom: 3rem;
-      }
-      .hero-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        background: var(--ink);
-        color: var(--off-white);
-        padding: 0.85rem 2rem;
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-weight: 500;
-        text-decoration: none;
-        transition: background 0.2s, transform 0.2s;
-      }
-      .hero-cta:hover {
-        background: var(--accent);
-        transform: translateX(3px);
-      }
-      .hero-cta svg {
-        transition: transform 0.2s;
-      }
-      .hero-cta:hover svg {
-        transform: translateX(4px);
-      }
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5rem 6rem 4rem;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; right: 0; top: 10%; bottom: 10%;
+    width: 1px;
+    background: var(--rule);
+  }
+  .hero-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .hero-name span {
+    display: block;
+    color: var(--accent);
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    font-weight: 400;
+    color: var(--mid);
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.01em;
+  }
+  .hero-intro {
+    font-size: 1rem;
+    color: var(--ink);
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .hero-cta--outline {
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  .hero-cta--outline:hover { background: var(--ink); color: var(--off-white); transform: translateX(3px); }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--ink);
+    color: var(--off-white);
+    padding: 0.85rem 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-cta:hover { background: var(--accent); transform: translateX(3px); }
+  .hero-cta svg { transition: transform 0.2s; }
+  .hero-cta:hover svg { transform: translateX(4px); }
 
-      .hero-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 6rem 4rem 6rem 5rem;
-        background: var(--cream);
-      }
-      .stat-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem 3rem;
-        margin-bottom: 3rem;
-      }
-      .stat-item {
-      }
-      .stat-num {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.8rem;
-        font-weight: 900;
-        color: var(--accent);
-        line-height: 1;
-        margin-bottom: 0.3rem;
-      }
-      .stat-label {
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--mid);
-        font-weight: 500;
-      }
-      .hero-location {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        color: var(--mid);
-        padding-top: 2rem;
-        border-top: 1px solid var(--rule);
-      }
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 5rem;
+    background: var(--cream);
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    margin-bottom: 3rem;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+  }
+  .hero-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--mid);
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
 
-      /* SECTION COMMONS */
-      section {
-        padding: 7rem 4rem;
-      }
-      .section-header {
-        display: flex;
-        align-items: baseline;
-        gap: 1.5rem;
-        margin-bottom: 4rem;
-      }
-      .section-num {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.85rem;
-        color: var(--accent);
-        font-style: italic;
-      }
-      .section-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1.8rem, 3vw, 2.6rem);
-        font-weight: 700;
-        letter-spacing: -0.01em;
-      }
-      .section-rule {
-        flex: 1;
-        height: 1px;
-        background: var(--rule);
-      }
+  /* SECTION COMMONS */
+  section { padding: 7rem 4rem; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
 
-      /* ABOUT */
-      #about {
-        background: var(--off-white);
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 6rem;
-        align-items: start;
-      }
-      .about-body p {
-        font-size: 1.05rem;
-        line-height: 1.9;
-        color: var(--ink);
-        margin-bottom: 1.5rem;
-      }
-      .about-body p:last-child {
-        margin-bottom: 0;
-      }
-      .about-body strong {
-        font-weight: 500;
-        color: var(--accent);
-      }
-      .skill-list {
-        list-style: none;
-      }
-      .skill-list li {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.85rem 0;
-        border-bottom: 1px solid var(--rule);
-        font-size: 0.9rem;
-        color: var(--mid);
-        font-weight: 500;
-      }
-      .skill-list li::before {
-        content: '—';
-        color: var(--accent);
-        font-weight: 700;
-      }
+  /* ABOUT */
+  #about { background: var(--off-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .about-body p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .about-body p:last-child { margin-bottom: 0; }
+  .about-body strong {
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.9rem;
+    color: var(--mid);
+    font-weight: 500;
+  }
+  .skill-list li::before {
+    content: '—';
+    color: var(--accent);
+    font-weight: 700;
+  }
 
-      /* EXPERIENCE */
-      #experience {
-        background: var(--cream);
-      }
-      .timeline {
-        position: relative;
-      }
-      .timeline::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: var(--rule);
-      }
-      .timeline-item {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        gap: 3rem;
-        padding: 0 0 4rem 0;
-        position: relative;
-      }
-      .timeline-item:last-child {
-        padding-bottom: 0;
-      }
-      .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -4px;
-        top: 6px;
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: var(--accent);
-      }
-      .tl-meta {
-        padding-left: 1.5rem;
-        padding-top: 0.1rem;
-      }
-      .tl-date {
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-      }
-      .tl-company {
-        font-family: 'Playfair Display', serif;
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 0.2rem;
-      }
-      .tl-location {
-        font-size: 0.8rem;
-        color: var(--mid);
-      }
-      .tl-content {
-      }
-      .tl-role {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 0.8rem;
-        color: var(--ink);
-      }
-      .tl-quote {
-        font-family: 'Playfair Display', serif;
-        font-style: italic;
-        font-size: 1rem;
-        color: var(--accent);
-        border-left: 3px solid var(--accent);
-        padding: 0.5rem 0 0.5rem 1.2rem;
-        margin: 1rem 0;
-        line-height: 1.6;
-      }
-      .tl-body {
-        font-size: 0.92rem;
-        line-height: 1.8;
-        color: var(--mid);
-        margin-bottom: 1rem;
-      }
-      .tl-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-      .tag {
-        font-size: 0.7rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 500;
-        padding: 0.3rem 0.8rem;
-        border: 1px solid var(--rule);
-        color: var(--mid);
-      }
-      .tag.accent {
-        background: var(--accent);
-        color: white;
-        border-color: var(--accent);
-      }
+  /* EXPERIENCE */
+  #experience { background: var(--cream); }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--rule);
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    padding: 0 0 4rem 0;
+    position: relative;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -4px; top: 6px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .tl-meta {
+    padding-left: 1.5rem;
+    padding-top: 0.1rem;
+  }
+  .tl-date {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .tl-company {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+  .tl-location {
+    font-size: 0.8rem;
+    color: var(--mid);
+  }
+  .tl-content {}
+  .tl-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--ink);
+  }
+  .tl-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+    padding: 0.5rem 0 0.5rem 1.2rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+  .tl-body {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--mid);
+    margin-bottom: 1rem;
+  }
+  .tl-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--rule);
+    color: var(--mid);
+  }
+  .tag.accent {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
 
-      /* ACHIEVEMENTS */
-      #achievements {
-        background: var(--ink);
-        color: var(--off-white);
-      }
-      #achievements .section-title {
-        color: var(--off-white);
-      }
-      #achievements .section-rule {
-        background: #2a2a2a;
-      }
-      .achievements-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        border: 1px solid #2a2a2a;
-      }
-      .achievement-card {
-        padding: 2.5rem;
-        border-right: 1px solid #2a2a2a;
-        border-bottom: 1px solid #2a2a2a;
-        transition: background 0.2s;
-      }
-      .achievement-card:hover {
-        background: #1a1a20;
-      }
-      .achievement-card:nth-child(3n) {
-        border-right: none;
-      }
-      .ach-icon {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-      .ach-text {
-        font-size: 0.92rem;
-        line-height: 1.7;
-        color: #b8b3ab;
-      }
-      .ach-text strong {
-        color: var(--accent);
-        font-weight: 500;
-      }
+  /* ACHIEVEMENTS */
+  #achievements { background: var(--ink); color: var(--off-white); }
+  #achievements .section-title { color: var(--off-white); }
+  #achievements .section-rule { background: #2a2a2a; }
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid #2a2a2a;
+  }
+  .achievement-card {
+    padding: 2.5rem;
+    border-right: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.2s;
+  }
+  .achievement-card:hover { background: #1a1a20; }
+  .achievement-card:nth-child(3n) { border-right: none; }
+  .ach-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .ach-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #b8b3ab;
+  }
+  .ach-text strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
 
-      /* APPROACH */
-      #approach {
-        background: var(--off-white);
-      }
-      .approach-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-      }
-      .approach-card {
-        padding: 2.5rem;
-        border-top: 3px solid var(--accent);
-        background: var(--cream);
-      }
-      .approach-num {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        font-weight: 900;
-        color: var(--accent);
-        opacity: 0.3;
-        margin-bottom: 1rem;
-      }
-      .approach-heading {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 0.8rem;
-      }
-      .approach-body {
-        font-size: 0.88rem;
-        color: var(--mid);
-        line-height: 1.8;
-      }
+  /* APPROACH */
+  #approach { background: var(--off-white); }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .approach-card {
+    padding: 2.5rem;
+    border-top: 3px solid var(--accent);
+    background: var(--cream);
+  }
+  .approach-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.3;
+    margin-bottom: 1rem;
+  }
+  .approach-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+  .approach-body {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.8;
+  }
 
-      /* CONTACT */
-      #contact {
-        background: var(--cream);
-        text-align: center;
-      }
-      #contact .section-header {
-        justify-content: center;
-      }
-      .contact-intro {
-        font-size: 1.1rem;
-        color: var(--mid);
-        max-width: 520px;
-        margin: 0 auto 3rem;
-        line-height: 1.8;
-      }
-      .contact-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-      }
-      .contact-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.9rem 2rem;
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.2s;
-      }
-      .contact-link.primary {
-        background: var(--accent);
-        color: white;
-      }
-      .contact-link.primary:hover {
-        background: var(--ink);
-      }
-      .contact-link.secondary {
-        border: 1px solid var(--ink);
-        color: var(--ink);
-      }
-      .contact-link.secondary:hover {
-        background: var(--ink);
-        color: var(--off-white);
-      }
+  /* CONTACT */
+  #contact {
+    background: var(--cream);
+    text-align: center;
+  }
+  #contact .section-header { justify-content: center; }
+  .contact-intro {
+    font-size: 1.1rem;
+    color: var(--mid);
+    max-width: 520px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .contact-link.primary {
+    background: var(--accent);
+    color: white;
+  }
+  .contact-link.primary:hover { background: var(--ink); }
+  .contact-link.secondary {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  .contact-link.secondary:hover { background: var(--ink); color: var(--off-white); }
 
-      /* FOOTER */
-      footer {
-        padding: 2rem 4rem;
-        border-top: 1px solid var(--rule);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.78rem;
-        color: var(--mid);
-        letter-spacing: 0.05em;
-      }
+  /* FOOTER */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--mid);
+    letter-spacing: 0.05em;
+  }
 
-      /* ANIMATIONS */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .hero-tag {
-        animation: fadeUp 0.6s ease both;
-        animation-delay: 0.1s;
-      }
-      .hero-name {
-        animation: fadeUp 0.6s ease both;
-        animation-delay: 0.2s;
-      }
-      .hero-title {
-        animation: fadeUp 0.6s ease both;
-        animation-delay: 0.3s;
-      }
-      .hero-intro {
-        animation: fadeUp 0.6s ease both;
-        animation-delay: 0.4s;
-      }
-      .hero-cta {
-        animation: fadeUp 0.6s ease both;
-        animation-delay: 0.5s;
-      }
-      .stat-grid {
-        animation: fadeUp 0.6s ease both;
-        animation-delay: 0.4s;
-      }
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag    { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  .hero-name   { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+  .hero-title  { animation: fadeUp 0.6s ease both; animation-delay: 0.3s; }
+  .hero-intro  { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+  .hero-cta    { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
+  .stat-grid   { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
 
-      /* RESPONSIVE */
-      @media (max-width: 900px) {
-        nav {
-          padding: 1.2rem 2rem;
-        }
-        .nav-links {
-          display: none;
-        }
-        .hero {
-          grid-template-columns: 1fr;
-          min-height: auto;
-        }
-        .hero-left {
-          padding: 5rem 2rem 3rem;
-        }
-        .hero-left::after {
-          display: none;
-        }
-        .hero-right {
-          padding: 3rem 2rem 5rem;
-        }
-        .hero-right {
-          background: var(--cream);
-        }
-        .stat-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        section {
-          padding: 5rem 2rem;
-        }
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 3rem;
-        }
-        .timeline-item {
-          grid-template-columns: 1fr;
-          gap: 0.5rem;
-        }
-        .tl-meta {
-          padding-left: 1.5rem;
-        }
-        .achievements-grid {
-          grid-template-columns: 1fr;
-        }
-        .achievement-card:nth-child(3n) {
-          border-right: 1px solid #2a2a2a;
-        }
-        .achievement-card:nth-child(odd) {
-          border-right: 1px solid #2a2a2a;
-        }
-        .approach-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-        footer {
-          flex-direction: column;
-          gap: 0.5rem;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- NAV -->
-    <nav>
-      <a href="#" class="nav-logo">Daniel Dunton</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 2rem 3rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 3rem 2rem 5rem; }
+    .hero-right { background: var(--cream); }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    section { padding: 5rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .tl-meta { padding-left: 1.5rem; }
+    .achievements-grid { grid-template-columns: 1fr; }
+    .achievement-card:nth-child(3n) { border-right: 1px solid #2a2a2a; }
+    .achievement-card:nth-child(odd) { border-right: 1px solid #2a2a2a; }
+    .approach-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <p class="hero-tag">Programme & Delivery Director · Bath, UK</p>
-        <h1 class="hero-name">Daniel<span>Dunton</span></h1>
-        <p class="hero-title">
-          Turning complex programmes into confident delivery
-        </p>
-        <p class="hero-intro">
-          With over 17 years leading high-stakes digital transformation and
-          programme delivery, I bring clarity to complexity by building trusted
-          teams, improving ways of working, and consistently delivering outcomes
-          that matter.
-        </p>
-        <a href="#contact" class="hero-cta">
-          Get in touch
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 8h10M9 4l4 4-4 4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </a>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Daniel Dunton</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Programme & Delivery Director · Bath, UK</p>
+    <h1 class="hero-name">Daniel<span>Dunton</span></h1>
+    <p class="hero-title">Turning complex programmes into confident delivery</p>
+    <p class="hero-intro">
+      With over 17 years leading high-stakes digital transformation and programme delivery,
+      I bring clarity to complexity by building trusted teams, improving ways of working,
+      and consistently delivering outcomes that matter.
+    </p>
+    <div class="hero-ctas">
+    <a href="#contact" class="hero-cta">
+      Get in touch
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="https://drive.google.com/uc?export=download&id=1XxeETifPwV2cbUAmCKPAFD8pAXOskYjN" download class="hero-cta hero-cta--outline">
+      Download CV
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 3v7M5 7l3 3 3-3M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-num">17+</div>
+        <div class="stat-label">Years' experience</div>
       </div>
-      <div class="hero-right">
-        <div class="stat-grid">
-          <div class="stat-item">
-            <div class="stat-num">17+</div>
-            <div class="stat-label">Years' experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">£8m+</div>
-            <div class="stat-label">Programme budgets managed</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">70%</div>
-            <div class="stat-label">Client satisfaction uplift</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">80%</div>
-            <div class="stat-label">Reduction in team turnover</div>
-          </div>
-        </div>
-        <div class="hero-location">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 1C4.79 1 3 2.79 3 5c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4zm0 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-              fill="currentColor"
-            />
-          </svg>
-          Based in Bath · Available for on-site & hybrid engagements
-        </div>
+      <div class="stat-item">
+        <div class="stat-num">£8m+</div>
+        <div class="stat-label">Programme budgets managed</div>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-header">
-        <span class="section-num">01</span>
-        <h2 class="section-title">About</h2>
-        <div class="section-rule"></div>
+      <div class="stat-item">
+        <div class="stat-num">70%</div>
+        <div class="stat-label">Client satisfaction uplift</div>
       </div>
-      <div class="about-grid">
-        <div class="about-body">
-          <p>
-            I'm a specialist in
-            <strong>programme delivery and team leadership</strong>, with a
-            track record spanning Financial Services, Healthcare, Sport, Energy,
-            Publishing, and AI. I've worked in consultancies, agencies, and
-            product houses. Always in the most complex, highest-stakes corners
-            of the business.
-          </p>
-          <p>
-            I founded and ran a digital consultancy for five years before moving
-            into senior delivery roles, which means I understand commercial
-            reality as well as craft. I know what it takes to build a business,
-            not just manage a project.
-          </p>
-          <p>
-            What sets me apart is my ability to
-            <strong>restore trust in struggling programmes</strong>, bring
-            structure to chaos, and grow the people around me. I've been
-            promoted from every permanent role I've held. I've also hired and
-            developed Project Managers who've gone on to significant careers.
-          </p>
-          <p>
-            I'm a certified Scrum Master and a certified Leader Who Coaches,
-            mentored by a highly regarded PMI consultant. I bring methodology
-            without rigidity, and governance without bureaucracy.
-          </p>
-        </div>
-        <div>
-          <ul class="skill-list">
-            <li>Complex programme management</li>
-            <li>Agile, PRINCE2, Kanban & Waterfall</li>
-            <li>Client & stakeholder management</li>
-            <li>Strategic digital transformation</li>
-            <li>AI & product development</li>
-            <li>Branding & experience design</li>
-            <li>Risk & issue management</li>
-            <li>Negotiation & contract management</li>
-            <li>Team building & coaching</li>
-            <li>Operational process design</li>
-          </ul>
-        </div>
+      <div class="stat-item">
+        <div class="stat-num">80%</div>
+        <div class="stat-label">Reduction in team turnover</div>
       </div>
-    </section>
+    </div>
+    <div class="hero-location">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 1C4.79 1 3 2.79 3 5c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4zm0 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor"/>
+      </svg>
+      Based in Bath · Available for on-site & hybrid engagements
+    </div>
+  </div>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-header">
-        <span class="section-num">02</span>
-        <h2 class="section-title">Experience</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Feb 2025 — Present</div>
-            <div class="tl-company">Digitas | Publicis</div>
-            <div class="tl-location">London</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Programme Director — Transformation & AI</div>
-            <p class="tl-body">
-              Brought in to turn around a major client programme at risk.
-              Optimised Agile ways of working, improved communications with
-              offshore partners, and upgraded programme governance. Increased
-              team productivity by approximately 25% and established as a
-              trusted advisor by the client. Leading major AI initiatives and
-              transformation programmes at scale.
-            </p>
-            <div class="tl-tags">
-              <span class="tag accent">AI Transformation</span>
-              <span class="tag">Agile</span>
-              <span class="tag">Programme Governance</span>
-              <span class="tag">Offshore Teams</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Feb 2025 — Present</div>
-            <div class="tl-company">Independent</div>
-            <div class="tl-location">Bath</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Delivery Consultant</div>
-            <p class="tl-body">
-              Work with clients to transform their operating models and ways of
-              working. Driven process innovation, improved distributed team
-              communications and morale.
-            </p>
-            <blockquote class="tl-quote">
-              "An expert at parachuting into problematic programmes and getting
-              them on track."
-            </blockquote>
-            <div class="tl-tags">
-              <span class="tag accent">Active</span>
-              <span class="tag">Consultancy</span>
-              <span class="tag">Fractional Delivery</span>
-              <span class="tag">Programme Direction</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Mar 2021 — Oct 2024</div>
-            <div class="tl-company">Future Platforms</div>
-            <div class="tl-location">London</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Head of Project Management</div>
-            <p class="tl-body">
-              Joined as Project Director, promoted to Head of Project
-              Management. Led strategic account leadership for FirstGroup,
-              Domino's, and LIV Golf. Restored a struggling account from
-              loss-making to the agency's most profitable. Personally
-              responsible for £5m+ of revenue sold to FirstGroup. Improved
-              client satisfaction scores by 70% through Agile coaching and
-              governance transformation.
-            </p>
-            <div class="tl-tags">
-              <span class="tag accent">£5m+ Revenue</span>
-              <span class="tag">Account Leadership</span>
-              <span class="tag">Agile Coaching</span>
-              <span class="tag">P&L Ownership</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Feb 2020 — Mar 2021</div>
-            <div class="tl-company">cxpartners</div>
-            <div class="tl-location">Bristol</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Freelance Programme Director</div>
-            <p class="tl-body">
-              Led a significant organisational change programme for HCA
-              Healthcare, a major private healthcare organisation. Rolled out
-              Scrum methodology and new processes organisation-wide, creating a
-              portfolio prioritisation framework that gave leadership clear,
-              data-driven visibility for the first time.
-            </p>
-            <div class="tl-tags">
-              <span class="tag">Healthcare</span>
-              <span class="tag">Organisational Change</span>
-              <span class="tag">Portfolio Management</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Aug 2018 — Jan 2020</div>
-            <div class="tl-company">SOON_</div>
-            <div class="tl-location">London</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Programme Director</div>
-            <p class="tl-body">
-              Joined as Senior Producer, hired permanently as Programme
-              Director. Part of the Leadership Team, responsible for recruiting
-              and developing the delivery function. Managed the most complex
-              programmes in the agency and shaped all pre-sales and client
-              engagement strategy.
-            </p>
-            <div class="tl-tags">
-              <span class="tag">Leadership Team</span>
-              <span class="tag">Pre-sales</span>
-              <span class="tag">Team Building</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Jun 2015 — Aug 2018</div>
-            <div class="tl-company">Propagator Group</div>
-            <div class="tl-location">London</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">
-              Digital Programme Manager → Digital Programme Director
-            </div>
-            <p class="tl-body">
-              Promoted to manage and enhance multiple digital products across
-              Publishing and Healthcare. Reported directly to the MD & CEO,
-              instrumental in re-engineering communication processes internally
-              and externally. Drove the company's operational evolution.
-            </p>
-            <div class="tl-tags">
-              <span class="tag">Publishing</span>
-              <span class="tag">Healthcare</span>
-              <span class="tag">Product Development</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Jan 2013 — Apr 2015</div>
-            <div class="tl-company">Foolproof Ltd</div>
-            <div class="tl-location">London</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Digital PM → Digital Portfolio Manager</div>
-            <p class="tl-body">
-              Hired as Digital Project Manager, promoted to Portfolio Manager.
-              Responsible for pre-sale scoping, planning, costing and delivery
-              across HSBC, Nationwide, and Santander. Supported PM team
-              development and had lead responsibility for portfolio
-              profitability.
-            </p>
-            <div class="tl-tags">
-              <span class="tag">Financial Services</span>
-              <span class="tag">HSBC</span>
-              <span class="tag">Nationwide</span>
-              <span class="tag">Santander</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-meta">
-            <div class="tl-date">Sept 2008 — Jan 2013</div>
-            <div class="tl-company">Seed Consultancy</div>
-            <div class="tl-location">Bath</div>
-          </div>
-          <div class="tl-content">
-            <div class="tl-role">Founder & Managing Director</div>
-            <p class="tl-body">
-              Founded and ran a digital consultancy for five years, offering
-              brand design, web design, and digital transformation services.
-              Grew the business from scratch, developing the brand and client
-              base independently. This is where the entrepreneurial and
-              commercial instincts that underpin my approach today were built.
-            </p>
-            <div class="tl-tags">
-              <span class="tag accent">Founder</span>
-              <span class="tag">Brand Design</span>
-              <span class="tag">Digital Transformation</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements">
-      <div class="section-header">
-        <span class="section-num" style="color: #b87a6a">03</span>
-        <h2 class="section-title">Achievements</h2>
-        <div class="section-rule" style="background: #2a2a2a"></div>
-      </div>
-      <div class="achievements-grid">
-        <div class="achievement-card">
-          <div class="ach-icon">🚀</div>
-          <p class="ach-text">
-            Founded and successfully ran a digital consultancy for
-            <strong>5 years</strong>, growing it from a blank slate into a
-            full-service digital transformation business.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">💷</div>
-          <p class="ach-text">
-            Managed projects and programmes with combined budgets exceeding
-            <strong>£8 million</strong> across multiple organisations and
-            sectors.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">📈</div>
-          <p class="ach-text">
-            Improved client satisfaction scores on multiple accounts by at least
-            <strong>70%</strong> through governance, communication and Agile
-            coaching.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">👥</div>
-          <p class="ach-text">
-            Managed multidisciplinary teams working simultaneously across
-            different locations, including <strong>offshore teams</strong>,
-            maintaining delivery quality and morale.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">📉</div>
-          <p class="ach-text">
-            Reduced staff turnover within project teams by an average of
-            <strong>80%</strong> through improved leadership, coaching and team
-            culture.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">🏆</div>
-          <p class="ach-text">
-            Promoted from <strong>every permanent position</strong> held.
-            Consistent recognition of performance, leadership and commercial
-            impact.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">🎯</div>
-          <p class="ach-text">
-            Personally sold over <strong>£5m of revenue</strong> to FirstGroup,
-            turning a loss-making account into the agency's most profitable
-            relationship.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">🤝</div>
-          <p class="ach-text">
-            Hired, trained and promoted Project Managers who have gone on to
-            <strong>highly successful careers</strong>. A genuine source of
-            professional pride.
-          </p>
-        </div>
-        <div class="achievement-card">
-          <div class="ach-icon">🏥</div>
-          <p class="ach-text">
-            Delivered programmes across
-            <strong
-              >Financial Services, Sport, Healthcare, Energy, Publishing and
-              AI</strong
-            >. Genuinely sector-agnostic delivery expertise.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section id="approach">
-      <div class="section-header">
-        <span class="section-num">04</span>
-        <h2 class="section-title">How I Work</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="approach-grid">
-        <div class="approach-card">
-          <div class="approach-num">01</div>
-          <h3 class="approach-heading">Clarity before velocity</h3>
-          <p class="approach-body">
-            I establish shared understanding before anything moves. That means
-            proper discovery, stakeholder alignment, and a prioritisation
-            framework everyone trusts. Speed without clarity just creates
-            expensive rework.
-          </p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">02</div>
-          <h3 class="approach-heading">Governance that enables</h3>
-          <p class="approach-body">
-            Structure should accelerate delivery, not slow it down. I design
-            governance that gives leadership visibility and teams autonomy,
-            cutting through noise to focus on what genuinely matters for
-            delivery.
-          </p>
-        </div>
-        <div class="approach-card">
-          <div class="approach-num">03</div>
-          <h3 class="approach-heading">People at the centre</h3>
-          <p class="approach-body">
-            The best programmes are built on trusted relationships. I invest
-            heavily in team culture, coaching, and communication. A motivated,
-            aligned team consistently outperforms any process.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-header">
-        <span class="section-num">05</span>
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="section-rule"></div>
-      </div>
-      <p class="contact-intro">
-        Available for programme director, delivery director, and transformation
-        roles. Permanent, contract, or fractional. Based in Bath with full
-        flexibility for hybrid and on-site work.
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>
+        I'm a specialist in <strong>programme delivery and team leadership</strong>, with a track record
+        spanning Financial Services, Healthcare, Sport, Energy, Publishing, and AI. I've worked in
+        consultancies, agencies, and product houses. Always in the most complex, highest-stakes corners
+        of the business.
       </p>
-      <div class="contact-links">
-        <a href="mailto:hello@danieldunton.com" class="contact-link primary">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M2 4l6 5 6-5M2 4h12v9H2V4z"
-              stroke="currentColor"
-              stroke-width="1.3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          hello@danieldunton.com
-        </a>
-        <a
-          href="https://www.linkedin.com/in/dan-dunton-92025310"
-          target="_blank"
-          class="contact-link secondary"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect
-              x="1"
-              y="1"
-              width="14"
-              height="14"
-              rx="2"
-              stroke="currentColor"
-              stroke-width="1.3"
-            />
-            <path
-              d="M4 6.5v5M4 4v.5M7 11.5v-3c0-1 .5-2 2-2s2 1 2 2v3M7 6.5v5"
-              stroke="currentColor"
-              stroke-width="1.3"
-              stroke-linecap="round"
-            />
-          </svg>
-          LinkedIn Profile
-        </a>
-        <a href="tel:+447762426121" class="contact-link secondary">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M3 2h3l1.5 3.5-1.5 1a8 8 0 004 4l1-1.5L14.5 10V13A1 1 0 0113 14 11 11 0 012 3a1 1 0 011-1z"
-              stroke="currentColor"
-              stroke-width="1.3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          07762 426 121
-        </a>
-      </div>
-    </section>
+      <p>
+        I founded and ran a digital consultancy for five years before moving into senior delivery roles,
+        which means I understand commercial reality as well as craft. I know what it takes to build a
+        business, not just manage a project.
+      </p>
+      <p>
+        What sets me apart is my ability to <strong>restore trust in struggling programmes</strong>,
+        bring structure to chaos, and grow the people around me. I've been promoted from every permanent
+        role I've held. I've also hired and developed Project Managers who've gone on to significant careers.
+      </p>
+      <p>
+        I'm a certified Scrum Master and a certified Leader Who Coaches, mentored by a highly regarded
+        PMI consultant. I bring methodology without rigidity, and governance without bureaucracy.
+      </p>
+    </div>
+    <div>
+      <ul class="skill-list">
+        <li>Complex programme management</li>
+        <li>Agile, PRINCE2, Kanban & Waterfall</li>
+        <li>Client & stakeholder management</li>
+        <li>Strategic digital transformation</li>
+        <li>AI & product development</li>
+        <li>Branding & experience design</li>
+        <li>Risk & issue management</li>
+        <li>Negotiation & contract management</li>
+        <li>Team building & coaching</li>
+        <li>Operational process design</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-      <span>© 2026 Daniel Dunton</span>
-      <span>Programme & Delivery Director · Bath, UK</span>
-    </footer>
-  </body>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Feb 2025 — Present</div>
+        <div class="tl-company">Digitas | Publicis</div>
+        <div class="tl-location">London</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Programme Director — Transformation & AI</div>
+        <p class="tl-body">Brought in to turn around a major client programme at risk. Optimised Agile ways of working, improved communications with offshore partners, and upgraded programme governance. Increased team productivity by approximately 25% and established as a trusted advisor by the client. Leading major AI initiatives and transformation programmes at scale.</p>
+        <div class="tl-tags">
+          <span class="tag accent">AI Transformation</span>
+          <span class="tag">Agile</span>
+          <span class="tag">Programme Governance</span>
+          <span class="tag">Offshore Teams</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Feb 2025 — Present</div>
+        <div class="tl-company">Independent</div>
+        <div class="tl-location">Bath</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Delivery Consultant</div>
+        <p class="tl-body">Work with clients to transform their operating models and ways of working. Driven process innovation, improved distributed team communications and morale.</p>
+        <blockquote class="tl-quote">"An expert at parachuting into problematic programmes and getting them on track."</blockquote>
+        <div class="tl-tags">
+          <span class="tag accent">Active</span>
+          <span class="tag">Consultancy</span>
+          <span class="tag">Fractional Delivery</span>
+          <span class="tag">Programme Direction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Mar 2021 — Oct 2024</div>
+        <div class="tl-company">Future Platforms</div>
+        <div class="tl-location">London</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Head of Project Management</div>
+        <p class="tl-body">Joined as Project Director, promoted to Head of Project Management. Led strategic account leadership for FirstGroup, Domino's, and LIV Golf. Restored a struggling account from loss-making to the agency's most profitable. Personally responsible for £5m+ of revenue sold to FirstGroup. Improved client satisfaction scores by 70% through Agile coaching and governance transformation.</p>
+        <div class="tl-tags">
+          <span class="tag accent">£5m+ Revenue</span>
+          <span class="tag">Account Leadership</span>
+          <span class="tag">Agile Coaching</span>
+          <span class="tag">P&L Ownership</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Feb 2020 — Mar 2021</div>
+        <div class="tl-company">cxpartners</div>
+        <div class="tl-location">Bristol</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Freelance Programme Director</div>
+        <p class="tl-body">Led a significant organisational change programme for HCA Healthcare, a major private healthcare organisation. Rolled out Scrum methodology and new processes organisation-wide, creating a portfolio prioritisation framework that gave leadership clear, data-driven visibility for the first time.</p>
+        <div class="tl-tags">
+          <span class="tag">Healthcare</span>
+          <span class="tag">Organisational Change</span>
+          <span class="tag">Portfolio Management</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Aug 2018 — Jan 2020</div>
+        <div class="tl-company">SOON_</div>
+        <div class="tl-location">London</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Programme Director</div>
+        <p class="tl-body">Joined as Senior Producer, hired permanently as Programme Director. Part of the Leadership Team, responsible for recruiting and developing the delivery function. Managed the most complex programmes in the agency and shaped all pre-sales and client engagement strategy.</p>
+        <div class="tl-tags">
+          <span class="tag">Leadership Team</span>
+          <span class="tag">Pre-sales</span>
+          <span class="tag">Team Building</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Jun 2015 — Aug 2018</div>
+        <div class="tl-company">Propagator Group</div>
+        <div class="tl-location">London</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Digital Programme Manager → Digital Programme Director</div>
+        <p class="tl-body">Promoted to manage and enhance multiple digital products across Publishing and Healthcare. Reported directly to the MD & CEO, instrumental in re-engineering communication processes internally and externally. Drove the company's operational evolution.</p>
+        <div class="tl-tags">
+          <span class="tag">Publishing</span>
+          <span class="tag">Healthcare</span>
+          <span class="tag">Product Development</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Jan 2013 — Apr 2015</div>
+        <div class="tl-company">Foolproof Ltd</div>
+        <div class="tl-location">London</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Digital PM → Digital Portfolio Manager</div>
+        <p class="tl-body">Hired as Digital Project Manager, promoted to Portfolio Manager. Responsible for pre-sale scoping, planning, costing and delivery across HSBC, Nationwide, and Santander. Supported PM team development and had lead responsibility for portfolio profitability.</p>
+        <div class="tl-tags">
+          <span class="tag">Financial Services</span>
+          <span class="tag">HSBC</span>
+          <span class="tag">Nationwide</span>
+          <span class="tag">Santander</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-meta">
+        <div class="tl-date">Sept 2008 — Jan 2013</div>
+        <div class="tl-company">Seed Consultancy</div>
+        <div class="tl-location">Bath</div>
+      </div>
+      <div class="tl-content">
+        <div class="tl-role">Founder & Managing Director</div>
+        <p class="tl-body">Founded and ran a digital consultancy for five years, offering brand design, web design, and digital transformation services. Grew the business from scratch, developing the brand and client base independently. This is where the entrepreneurial and commercial instincts that underpin my approach today were built.</p>
+        <div class="tl-tags">
+          <span class="tag accent">Founder</span>
+          <span class="tag">Brand Design</span>
+          <span class="tag">Digital Transformation</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-header">
+    <span class="section-num" style="color:#b87a6a">03</span>
+    <h2 class="section-title">Achievements</h2>
+    <div class="section-rule" style="background:#2a2a2a"></div>
+  </div>
+  <div class="achievements-grid">
+    <div class="achievement-card">
+      <div class="ach-icon">🚀</div>
+      <p class="ach-text">Founded and successfully ran a digital consultancy for <strong>5 years</strong>, growing it from a blank slate into a full-service digital transformation business.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">💷</div>
+      <p class="ach-text">Managed projects and programmes with combined budgets exceeding <strong>£8 million</strong> across multiple organisations and sectors.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">📈</div>
+      <p class="ach-text">Improved client satisfaction scores on multiple accounts by at least <strong>70%</strong> through governance, communication and Agile coaching.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">👥</div>
+      <p class="ach-text">Managed multidisciplinary teams working simultaneously across different locations, including <strong>offshore teams</strong>, maintaining delivery quality and morale.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">📉</div>
+      <p class="ach-text">Reduced staff turnover within project teams by an average of <strong>80%</strong> through improved leadership, coaching and team culture.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🏆</div>
+      <p class="ach-text">Promoted from <strong>every permanent position</strong> held. Consistent recognition of performance, leadership and commercial impact.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🎯</div>
+      <p class="ach-text">Personally sold over <strong>£5m of revenue</strong> to FirstGroup, turning a loss-making account into the agency's most profitable relationship.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🤝</div>
+      <p class="ach-text">Hired, trained and promoted Project Managers who have gone on to <strong>highly successful careers</strong>. A genuine source of professional pride.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="ach-icon">🏥</div>
+      <p class="ach-text">Delivered programmes across <strong>Financial Services, Sport, Healthcare, Energy, Publishing and AI</strong>. Genuinely sector-agnostic delivery expertise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">How I Work</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="approach-grid">
+    <div class="approach-card">
+      <div class="approach-num">01</div>
+      <h3 class="approach-heading">Clarity before velocity</h3>
+      <p class="approach-body">I establish shared understanding before anything moves. That means proper discovery, stakeholder alignment, and a prioritisation framework everyone trusts. Speed without clarity just creates expensive rework.</p>
+    </div>
+    <div class="approach-card">
+      <div class="approach-num">02</div>
+      <h3 class="approach-heading">Governance that enables</h3>
+      <p class="approach-body">Structure should accelerate delivery, not slow it down. I design governance that gives leadership visibility and teams autonomy, cutting through noise to focus on what genuinely matters for delivery.</p>
+    </div>
+    <div class="approach-card">
+      <div class="approach-num">03</div>
+      <h3 class="approach-heading">People at the centre</h3>
+      <p class="approach-body">The best programmes are built on trusted relationships. I invest heavily in team culture, coaching, and communication. A motivated, aligned team consistently outperforms any process.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="section-rule"></div>
+  </div>
+  <p class="contact-intro">
+    Available for programme director, delivery director, and transformation roles.
+    Permanent, contract, or fractional. Based in Bath with full flexibility for hybrid and on-site work.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:hello@danieldunton.com" class="contact-link primary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5M2 4h12v9H2V4z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      hello@danieldunton.com
+    </a>
+    <a href="https://www.linkedin.com/in/dan-dunton-92025310" target="_blank" class="contact-link secondary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M4 6.5v5M4 4v.5M7 11.5v-3c0-1 .5-2 2-2s2 1 2 2v3M7 6.5v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      LinkedIn Profile
+    </a>
+    <a href="tel:+447762426121" class="contact-link secondary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 3.5-1.5 1a8 8 0 004 4l1-1.5L14.5 10V13A1 1 0 0113 14 11 11 0 012 3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      07762 426 121
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Daniel Dunton</span>
+  <span>Programme & Delivery Director · Bath, UK</span>
+</footer>
+
+</body>
 </html>
